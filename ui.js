@@ -2,7 +2,8 @@ class UI {
     constructor() {
         this.profile = document.getElementById('profile');
     }
-
+    
+//function that will create the alerts, using the api data//
     showProfile(user) {
         this.profile.innerHTML = `
             <div class="card card-body mb-3">
@@ -41,6 +42,8 @@ class UI {
             </div>
         `; 
     }
+
+
     //show alert//
     showAlert(message, className) {
         //remaining alert removal
@@ -62,14 +65,16 @@ class UI {
             this.clearAlert();
         }, 3000);
     }
-
-
+    
+    //function to prevent several alerts from showing
     clearAlert() {
         const currentAllert = document.querySelector('.alert');
         if (currentAllert) {
             currentAllert.remove();
         }
     }
+
+
     //clear profile//
     clearProfile() {
         this.profile.innerHTML = '';
